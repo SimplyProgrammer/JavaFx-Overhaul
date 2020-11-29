@@ -1,0 +1,58 @@
+.rect
+{
+	-fx-scale-x: 1;
+	-fx-scale-y: 1;
+	-fx-rotate: 0;
+}
+
+.rect:hover
+{
+	-fx-scale-x: 1.2;
+	-fx-scale-y: 1.2;
+	-fx-rotate: 90;
+}
+
+.rectIntrpDemo
+{
+	-fx-fill: Red;
+}
+
+.text
+{
+	-fx-text-fill: Black;
+}
+
+.text:hover
+{
+	-fx-text-fill: Orange;
+}
+
+#redRect
+{
+	-fx-fill: Black;
+}
+
+#redRect:hover
+{
+	-fx-fill: Red;
+}
+
+#greenRect
+{
+	-fx-fill: Black;
+}
+
+#greenRect:hover
+{
+	-fx-fill: Green;
+}
+
+#blueRect
+{
+	-fx-fill: Black;
+}
+
+#blueRect:hover
+{
+	-fx-fill: Blue;
+}
