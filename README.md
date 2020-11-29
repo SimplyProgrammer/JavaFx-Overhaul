@@ -1,2 +1,2 @@
-# JavaFx-Overhaul
-Powerful tool to animate elements/nodes in JavaFx!
+# About
+JavaFx overhaul is a powerful tool to animate elements/nodes in JavaFx. It gives you an power to animate selected properties of nodes or also individual ones. You just need to create one simple object and properties will be animated dynamically when you change them! Something pretty similar to "transition" from html. Prepare to not use clumsy TransitionBuilders or even TimeLines ever again. The overhaul has come!
