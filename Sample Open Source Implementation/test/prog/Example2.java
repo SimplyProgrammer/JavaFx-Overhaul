@@ -18,7 +18,6 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
@@ -71,12 +70,12 @@ public class Example2 extends Application
 		t.setTranslateY(10);
 		
 		//Chart series
-		XYChart.Series<Number, Number> lSeries = new XYChart.Series<>("Linear", FXCollections.observableArrayList());
-		XYChart.Series<Number, Number> eSeries = new XYChart.Series<>("Ease", FXCollections.observableArrayList());
-		XYChart.Series<Number, Number> eInSeries = new XYChart.Series<>("Ease-in", FXCollections.observableArrayList());
-		XYChart.Series<Number, Number> eOutSeries = new XYChart.Series<>("Ease-out", FXCollections.observableArrayList());
-		XYChart.Series<Number, Number> eInOutSeries = new XYChart.Series<>("Ease-both", FXCollections.observableArrayList());
-		XYChart.Series<Number, Number> stpsSeries = new XYChart.Series<>("Steps(5)", FXCollections.observableArrayList());
+		Series<Number, Number> lSeries = new Series<>("Linear", FXCollections.observableArrayList());
+		Series<Number, Number> eSeries = new Series<>("Ease", FXCollections.observableArrayList());
+		Series<Number, Number> eInSeries = new Series<>("Ease-in", FXCollections.observableArrayList());
+		Series<Number, Number> eOutSeries = new Series<>("Ease-out", FXCollections.observableArrayList());
+		Series<Number, Number> eInOutSeries = new Series<>("Ease-both", FXCollections.observableArrayList());
+		Series<Number, Number> stpsSeries = new Series<>("Steps(5)", FXCollections.observableArrayList());
 				
 		//Interpolators comparison (important part)
 		Rectangle linear = new Rectangle(200, 100, 100, 100), ease = new Rectangle(400, 100, 100, 100), easeIn = new Rectangle(600, 100, 100, 100), easeOut = new Rectangle(600, 100, 100, 100), easeBoth = new Rectangle(600, 100, 100, 100), steps = new Rectangle(600, 100, 100, 100);
@@ -119,13 +118,10 @@ public class Example2 extends Application
 					Platform.runLater(() -> t.setText(oldV));
 				}
 			}
-			if (d != null)
-			{
-				xA.setUpperBound(d.toSeconds());
-				xA.setTickUnit(d.toSeconds()/10);
-				for (GeneralTransition tr : trans)
-					tr.setDefaultDuration(d);
-			}
+			xA.setUpperBound(d.toSeconds());
+			xA.setTickUnit(d.toSeconds()/10);
+			for (GeneralTransition tr : trans)
+				tr.setDefaultDuration(d);
 		});
 		t.setText(d.toSeconds()+"");
 		
@@ -227,7 +223,7 @@ public class Example2 extends Application
 	
 	public GeneralTransition Create(Rectangle rect, Series<Number, Number> series, Interpolator interp) //Magic part here
 	{
-		return new GeneralTransition(d, rect.widthProperty())  //Magic
+		return new GeneralTransition(d, rect.widthProperty()) //Magic
 		{
 			protected <T> void SetupTransition(PropertyTransition<?> trans, T from, T to) 
 			{
