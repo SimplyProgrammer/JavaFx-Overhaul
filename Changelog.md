@@ -1,6 +1,6 @@
 # FxOverhaul 1.0.0 (beta)
 
-Release date: 12.8.2020 (Evening)
+Release date: 11.30.2020 (Evening)
 
 What was added:
 * GeneralTransition to animate properties dynamically!
